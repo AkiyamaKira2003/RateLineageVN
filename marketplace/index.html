@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kira LC - Premium Digital Goods Marketplace. Shop high-quality digital products with secure checkout and fast delivery.">
+  <meta name="theme-color" content="#000000">
+  <title>Kira LC - Digital Goods Marketplace</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles/design-system.css">
+  <link rel="stylesheet" href="./styles/components.css">
+  <link rel="stylesheet" href="./styles/layout.css">
+  <link rel="stylesheet" href="./styles/animations.css">
+  
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav-bar">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <span class="logo-text">KIRA LC</span>
+          <span class="logo-badge">DIGITAL MARKETPLACE</span>
+        </a>
+
+        <!-- Main Navigation -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Browse Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Trending</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Best Sellers</a>
+          </li>
+        </ul>
+
+        <!-- Right side actions -->
+        <div class="nav-actions">
+          <!-- Search -->
+          <div class="search-box">
+            <input 
+              type="search" 
+              class="search-input" 
+              placeholder="Search products..." 
+              aria-label="Search products"
+            >
+            <span class="search-icon">🔍</span>
+          </div>
+
+          <!-- Cart -->
+          <button class="btn-icon btn-cart" aria-label="Shopping cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-count" style="display: none;">0</span>
+          </button>
+
+          <!-- User Menu -->
+          <div class="dropdown">
+            <button class="btn-icon dropdown-trigger" aria-label="User menu">
+              <span>👤</span>
+            </button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item">Profile</button>
+              <button class="dropdown-item">Orders</button>
+              <button class="dropdown-item">Wishlist</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item">Settings</button>
+              <button class="dropdown-item">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Premium Digital Goods Marketplace</h1>
+        <p class="hero-subtitle">Explore thousands of high-quality digital products. Instant delivery, secure checkout, and 24/7 support.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-lg">Start Shopping</button>
+          <button class="btn btn-outline btn-lg">Learn More</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-grid">
+          <div class="hero-card"></div>
+          <div class="hero-card"></div>
+          <div class="hero-card"></div>
+          <div class="hero-card"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Sort Bar -->
+  <section class="filter-bar">
+    <div class="container">
+      <div class="filter-controls">
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <label for="category-select">Category</label>
+          <select id="category-select" class="filter-select">
+            <option value="">All Categories</option>
+            <option value="software">Software</option>
+            <option value="templates">Templates</option>
+            <option value="plugins">Plugins</option>
+            <option value="assets">Assets</option>
+            <option value="courses">Courses</option>
+          </select>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="filter-group">
+          <label for="price-select">Price Range</label>
+          <select id="price-select" class="filter-select">
+            <option value="">All Prices</option>
+            <option value="0-10">$0 - $10</option>
+            <option value="10-25">$10 - $25</option>
+            <option value="25-50">$25 - $50</option>
+            <option value="50-100">$50 - $100</option>
+            <option value="100+">$100+</option>
+          </select>
+        </div>
+
+        <!-- Rating Filter -->
+        <div class="filter-group">
+          <label for="rating-select">Rating</label>
+          <select id="rating-select" class="filter-select">
+            <option value="">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4+ Stars</option>
+            <option value="3">3+ Stars</option>
+          </select>
+        </div>
+
+        <!-- Sort -->
+        <div class="filter-group">
+          <label for="sort-select">Sort By</label>
+          <select id="sort-select" class="filter-select">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="trending">Trending</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-results">
+        <span id="results-count">Showing 24 products</span>
+        <button id="clear-filters-btn" class="btn btn-sm btn-ghost">Clear Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main">
+    <div class="container">
+      <!-- Products Grid -->
+      <section class="products-section">
+        <div id="products-grid" class="products-grid">
+          <!-- Products will be loaded here -->
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-spinner" style="display: none;">
+          <div class="loader"></div>
+          <p>Loading products...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state" style="display: none;">
+          <h3>No products found</h3>
+          <p>Try adjusting your filters or search terms</p>
+          <button class="btn btn-primary">Reset Filters</button>
+        </div>
+      </section>
+
+      <!-- Pagination -->
+      <nav class="pagination-container" aria-label="Product pagination">
+        <div class="pagination" id="pagination">
+          <!-- Pagination will be rendered here -->
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Shopping Cart Modal -->
+  <div id="cart-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title">Shopping Cart</h2>
+        <button class="modal-close" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items" class="cart-items">
+          <!-- Cart items will be rendered here -->
+        </div>
+        <div id="cart-empty" class="cart-empty" style="display: none;">
+          <p>Your cart is empty</p>
+          <button class="btn btn-primary">Continue Shopping</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="cart-summary">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price" class="text-primary">$0.00</span>
+          </div>
+        </div>
+        <button class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>About Kira LC</h4>
+          <p>Premium digital goods marketplace with secure checkout and instant delivery.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Browse Products</a></li>
+            <li><a href="#">Sell on Kira</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Discord</a>
+            <a href="#" class="social-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Kira LC. All rights reserved.</p>
+        <div class="payment-methods">
+          <span>Secure payments powered by Stripe</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="./js/interactions.js"></script>
+  <script type="module" src="./js/marketplace.js"></script>
+</body>
+</html>
