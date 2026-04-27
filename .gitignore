@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+*.err.log
+
+# Cache (keep structure)
+cache/*.json
+!cache/.gitkeep
+
+# Temporary files
+tmp-*
+
+# Build output
+build/
+dist/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright
+tools/barotem-sync/node_modules/
+
+# GitNexus
+.gitnexus/
+
+# Claude skills
+.claude/
+
+# Cloudflare
+*.msi
+tools/cloudflared.exe
