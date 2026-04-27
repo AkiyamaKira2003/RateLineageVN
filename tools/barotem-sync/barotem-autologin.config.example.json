@@ -1,0 +1,9 @@
+{
+  "cdpUrl": "http://127.0.0.1:9666",
+  "loginUrl": "https://www.barotem.com/auth/login",
+  "username": "",
+  "password": "",
+  "autoSubmitAfterCaptcha": true,
+  "captchaWaitMs": 180000,
+  "pollMs": 500
+}

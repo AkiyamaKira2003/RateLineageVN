@@ -36,3 +36,5 @@ tools/barotem-sync/node_modules/
 # Cloudflare
 *.msi
 tools/cloudflared.exe
+
+.vercel

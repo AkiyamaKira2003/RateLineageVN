@@ -1,0 +1,2 @@
+﻿PublicUrl=https://syndrome-bases-competitions-features.trycloudflare.com
+Password=14.183.60.157
