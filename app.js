@@ -2299,6 +2299,17 @@ async function init() {
   setInterval(() => {
     loadChart();
   }, AUTO_REFRESH_CHART_MS);
+
+  // Initialize sidebar and feature modules
+  if (typeof SidebarManager !== "undefined") {
+    window.sidebarManager = new SidebarManager();
+  }
+  if (typeof CheckRate !== "undefined") {
+    window.checkRate = new CheckRate();
+  }
+  if (typeof XGumCalculator !== "undefined") {
+    window.xgumCalculator = new XGumCalculator();
+  }
 }
 
 init();

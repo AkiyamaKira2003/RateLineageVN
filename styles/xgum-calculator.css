@@ -1,0 +1,367 @@
+/**
+ * XGum Calculator Feature Styles
+ */
+
+.xgum-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Quick Conversion */
+.xgum-quick {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(67, 230, 255, 0.05);
+}
+
+.xgum-quick-inputs {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.xgum-quick-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.xgum-quick-input-group label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+#xgumQuickInput,
+#xgumQuickOutput {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  color: #ffe9bf;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xgumQuickInput:focus-visible,
+#xgumQuickOutput:focus-visible {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan-soft);
+}
+
+#xgumQuickToggle {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  outline: none;
+  min-width: 70px;
+  text-align: center;
+}
+
+#xgumQuickToggle:hover {
+  border-color: var(--cyan);
+  background: #1f2d3a;
+}
+
+#xgumFeeDisplay {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+  min-height: 16px;
+}
+
+.xgum-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+#xgumAddOrder {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid rgba(67, 230, 255, 0.5);
+  border-radius: 6px;
+  background: rgba(67, 230, 255, 0.12);
+  color: var(--cyan);
+  font: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+#xgumAddOrder:hover {
+  background: rgba(67, 230, 255, 0.2);
+  border-color: var(--cyan);
+}
+
+/* Configuration Section */
+.xgum-config {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(18, 29, 42, 0.6);
+}
+
+.xgum-config-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.xgum-config-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.xgum-config-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.xgum-config-item label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.xgum-config-item input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.xgum-config-item input:focus-visible {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 2px var(--cyan-soft);
+}
+
+.xgum-rate-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+#xgumRefreshRate {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  outline: none;
+}
+
+#xgumRefreshRate:hover {
+  border-color: var(--cyan);
+  background: #1f2d3a;
+}
+
+.rate-status {
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.rate-status.loading {
+  color: var(--muted);
+}
+
+.rate-status.success {
+  color: #a9efc7;
+}
+
+.rate-status.error {
+  color: #ffb3b3;
+}
+
+/* Orders List */
+.xgum-orders {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  background: rgba(18, 29, 42, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 240px;
+}
+
+.xgum-orders-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  background: #152230;
+}
+
+.xgum-orders-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#xgumClearOrders {
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: #ffb3b3;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+#xgumClearOrders:hover {
+  border-color: #ffb3b3;
+  background: rgba(255, 138, 138, 0.08);
+}
+
+#xgumOrdersList {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(126, 155, 186, 0.5) transparent;
+}
+
+#xgumOrdersList::-webkit-scrollbar {
+  width: 4px;
+}
+
+#xgumOrdersList::-webkit-scrollbar-thumb {
+  background: rgba(126, 155, 186, 0.5);
+  border-radius: 2px;
+}
+
+.orders-empty {
+  padding: 20px 12px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.order-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideIn 0.3s ease;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.order-time {
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.order-convert {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.order-convert .amount {
+  color: #ffe9bf;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  flex: 1;
+  text-align: center;
+  min-width: 60px;
+}
+
+.order-convert .arrow {
+  color: var(--cyan);
+  font-weight: 600;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.order-rate {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .xgum-quick-inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #xgumQuickToggle {
+    width: 100%;
+  }
+
+  .xgum-config {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .xgum-orders {
+    max-height: 200px;
+  }
+}

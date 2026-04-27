@@ -1,0 +1,222 @@
+/**
+ * Check Rate Feature Styles
+ */
+
+.check-rate-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.check-rate-section .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.check-rate-section .input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.check-rate-section .input-row .form-group {
+  gap: 4px;
+}
+
+#checkRateServerSelect,
+#checkRateAmount,
+#checkRatePrice {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-soft);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+#checkRateServerSelect:focus-visible,
+#checkRateAmount:focus-visible,
+#checkRatePrice:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+#checkRateBtn {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 122, 80, 0.5);
+  border-radius: 6px;
+  background: rgba(255, 122, 80, 0.12);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+#checkRateBtn:hover {
+  background: rgba(255, 122, 80, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+#checkRateBtn:active {
+  transform: translateY(0);
+}
+
+/* Result display */
+#checkRateResult {
+  min-height: 0;
+}
+
+.check-result-box {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: rgba(73, 206, 130, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.check-result-box.good,
+.check-result-box.excellent {
+  border-color: rgba(73, 206, 130, 0.4);
+  background: rgba(73, 206, 130, 0.08);
+}
+
+.check-result-box.fair {
+  border-color: rgba(255, 202, 138, 0.4);
+  background: rgba(255, 202, 138, 0.06);
+}
+
+.check-result-box.acceptable {
+  border-color: rgba(255, 122, 80, 0.35);
+  background: rgba(255, 122, 80, 0.08);
+}
+
+.check-result-box.poor {
+  border-color: rgba(255, 138, 138, 0.4);
+  background: rgba(255, 138, 138, 0.08);
+}
+
+.check-result-box.error {
+  border-color: rgba(255, 138, 138, 0.4);
+  background: rgba(255, 138, 138, 0.08);
+  color: #ffc4c4;
+}
+
+.result-icon {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.result-header {
+  margin-bottom: 10px;
+}
+
+.quality-indicator {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  color: #d8e8f8;
+}
+
+.quality-indicator.excellent {
+  background: rgba(73, 206, 130, 0.2);
+  color: #a9efc7;
+}
+
+.quality-indicator.good {
+  background: rgba(73, 206, 130, 0.15);
+  color: #a9efc7;
+}
+
+.quality-indicator.fair {
+  background: rgba(255, 202, 138, 0.15);
+  color: #ffd9a8;
+}
+
+.quality-indicator.acceptable {
+  background: rgba(255, 122, 80, 0.15);
+  color: #ffb699;
+}
+
+.quality-indicator.poor {
+  background: rgba(255, 138, 138, 0.15);
+  color: #ffb3b3;
+}
+
+.result-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.result-row .label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.result-row .value {
+  color: #ffe9bf;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-row .value.diff {
+  color: #ff8a8a;
+}
+
+.result-row .value.diff.down {
+  color: #67b5ff;
+}
+
+.result-footer {
+  font-size: 12px;
+  color: #d8e8f8;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .check-rate-section .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .result-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

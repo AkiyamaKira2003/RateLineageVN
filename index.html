@@ -32,6 +32,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/sidebar.css">
+  <link rel="stylesheet" href="./styles/check-rate.css">
+  <link rel="stylesheet" href="./styles/xgum-calculator.css">
   <style>
     :root {
       --bg: #09111a;
@@ -1423,7 +1426,8 @@
       <div class="boot-loader-sub">Loading realtime data</div>
     </div>
   </div>
-  <main class="shell">
+  <div class="layout-with-sidebar">
+    <main class="shell main-content">
     <section class="hero" aria-label="Overview">
       <div class="brand">
         <div class="mark" aria-hidden="true">
@@ -1539,9 +1543,129 @@
         Bạn có thể xem dữ liệu tại <a href="/api/rates">/api/rates</a>.
       </div>
     </noscript>
-  </main>
+    </main>
+
+    <!-- Sidebar Panel -->
+    <aside class="sidebar-panel" id="sidebarPanel" aria-label="Feature panels">
+      <div class="sidebar-tabs">
+        <button class="tab is-active" data-feature="check-rate" type="button">Check Rate</button>
+        <button class="tab" data-feature="xgum-calc" type="button">XGum Calc</button>
+      </div>
+
+      <div class="sidebar-content">
+        <!-- Check Rate Panel -->
+        <div class="feature-panel is-active" id="check-rate-panel">
+          <div class="check-rate-section">
+            <div class="form-group">
+              <label for="checkRateServerSelect">Server</label>
+              <select id="checkRateServerSelect">
+                <option value="S1">S1</option>
+                <option value="S2">S2</option>
+                <option value="S3">S3</option>
+                <option value="S4">S4</option>
+                <option value="S5">S5</option>
+                <option value="S6">S6</option>
+                <option value="S7">S7</option>
+                <option value="S8">S8</option>
+                <option value="S9">S9</option>
+                <option value="S10">S10</option>
+                <option value="S11">S11</option>
+                <option value="S12">S12</option>
+                <option value="S13">S13</option>
+                <option value="S14">S14</option>
+                <option value="S15">S15</option>
+                <option value="S16">S16</option>
+                <option value="S17">S17</option>
+                <option value="S18">S18</option>
+                <option value="S19">S19</option>
+                <option value="S20">S20</option>
+                <option value="S21">S21</option>
+                <option value="S22">S22</option>
+                <option value="S23">S23</option>
+                <option value="S24">S24</option>
+                <option value="S25">S25</option>
+                <option value="S26">S26</option>
+                <option value="S27">S27</option>
+                <option value="S28">S28</option>
+              </select>
+            </div>
+
+            <div class="input-row">
+              <div class="form-group">
+                <label for="checkRateAmount">Số lượng (VD: 1M)</label>
+                <input id="checkRateAmount" type="text" placeholder="100k, 1M, 10M..." />
+              </div>
+              <div class="form-group">
+                <label for="checkRatePrice">Giá VND/10k</label>
+                <input id="checkRatePrice" type="number" placeholder="500000" step="1000" />
+              </div>
+            </div>
+
+            <button id="checkRateBtn" type="button">Kiểm tra giá</button>
+
+            <div id="checkRateResult"></div>
+          </div>
+        </div>
+
+        <!-- XGum Calculator Panel -->
+        <div class="feature-panel" id="xgum-calc-panel">
+          <div class="xgum-section">
+            <!-- Quick Conversion -->
+            <div class="xgum-quick">
+              <div class="xgum-quick-inputs">
+                <div class="xgum-quick-input-group">
+                  <label for="xgumQuickInput">Số tiền</label>
+                  <input id="xgumQuickInput" type="number" placeholder="0" inputmode="decimal" />
+                </div>
+                <button id="xgumQuickToggle" type="button">KRW → VND</button>
+                <div class="xgum-quick-input-group">
+                  <label for="xgumQuickOutput">Kết quả</label>
+                  <input id="xgumQuickOutput" type="number" readonly placeholder="0" />
+                </div>
+              </div>
+              <div id="xgumFeeDisplay"></div>
+              <div class="xgum-quick-actions">
+                <button id="xgumAddOrder" type="button">Thêm đơn hàng</button>
+              </div>
+            </div>
+
+            <!-- Configuration -->
+            <div class="xgum-config">
+              <div class="xgum-config-title">Cấu hình</div>
+              <div class="xgum-config-group">
+                <div class="xgum-config-item">
+                  <label for="xgumRateInput">Tỷ giá KRW/VND</label>
+                  <input id="xgumRateInput" type="number" placeholder="0.023" step="0.000001" inputmode="decimal" />
+                </div>
+                <div class="xgum-rate-status">
+                  <span id="xgumRateStatus">Tập hợp</span>
+                  <button id="xgumRefreshRate" type="button">⟳ Làm mới</button>
+                </div>
+                <div class="xgum-config-item">
+                  <label for="xgumFeeInput">Phí nền tảng (%)</label>
+                  <input id="xgumFeeInput" type="number" placeholder="2.5" step="0.1" inputmode="decimal" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Orders History -->
+            <div class="xgum-orders">
+              <div class="xgum-orders-header">
+                <span class="xgum-orders-title">Lịch sử</span>
+                <button id="xgumClearOrders" type="button">Xóa</button>
+              </div>
+              <div id="xgumOrdersList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 
   <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="./modules/sidebar-manager.js"></script>
+  <script src="./modules/check-rate.js"></script>
+  <script src="./modules/xgum-calculator.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
